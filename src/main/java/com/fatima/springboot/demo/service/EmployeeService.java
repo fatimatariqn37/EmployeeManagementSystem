@@ -20,7 +20,7 @@ public class EmployeeService implements EntityService<Employee> {
 	private EmployeeDAO employeeDAO;
 	
 	@Autowired
-	public EmployeeService(@Qualifier("employeeDAOJ") EmployeeDAO theEmployeeDAO) {
+	public EmployeeService(@Qualifier("employeeDAO") EmployeeDAO theEmployeeDAO) {
 		employeeDAO = theEmployeeDAO;
 	}
 	
