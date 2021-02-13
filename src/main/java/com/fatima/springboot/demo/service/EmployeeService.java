@@ -2,26 +2,28 @@ package com.fatima.springboot.demo.service;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fatima.springboot.demo.dao.EmployeeDAO;
 import com.fatima.springboot.demo.dao.EntityDAO;
+import com.fatima.springboot.demo.entity.Department;
 import com.fatima.springboot.demo.entity.Employee;
 
-@Scope(value = "session")
-@Component(value = "employeeService")
+@Service
 public class EmployeeService implements EntityService<Employee> {
 	
 	private EmployeeDAO employeeDAO;
 	
 	@Autowired
 	public EmployeeService(@Qualifier("employeeDAO") EmployeeDAO theEmployeeDAO) {
-		employeeDAO = theEmployeeDAO;
+		employeeDAO = (EmployeeDAO) theEmployeeDAO;
 	}
 	
 	@Override
@@ -33,7 +35,19 @@ public class EmployeeService implements EntityService<Employee> {
 	@Override
 	@Transactional
 	public Employee findById(int theId) {
-		return employeeDAO.findById(theId);
+		Optional<Employee> result = employeeDAO.findById(theId);
+		
+		 Employee dep = null;
+		
+		if (result.isPresent()) {
+			dep = result.get();
+		}
+		else {
+	
+			throw new RuntimeException("Did not find department id - " + theId);
+		}
+		
+		return dep;
 	}
 
 	@Override
