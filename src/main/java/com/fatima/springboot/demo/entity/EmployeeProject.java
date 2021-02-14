@@ -55,7 +55,7 @@ public class EmployeeProject {
 	}
 
 
-	public EmployeeProject(Employee employee, Project project, String fteAllocation) {
+	public EmployeeProject(Employee employee, Project project,String fteAllocation) {
 		this.employee = employee;
 		this.project = project;
 		this.fteAllocation = fteAllocation;

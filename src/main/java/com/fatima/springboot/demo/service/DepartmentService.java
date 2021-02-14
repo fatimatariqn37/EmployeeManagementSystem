@@ -27,14 +27,7 @@ public class DepartmentService implements EntityService<Department> {
 		departmentDAO = theDepartmentDAO;
 	}
 	
-	@Override
-	@Transactional
-	public List<Department> findAll() {
-		
-	
-			return departmentDAO.findAll();
-		
-	}
+
 
 	@Override
 	@Transactional
@@ -54,6 +47,16 @@ public class DepartmentService implements EntityService<Department> {
 					return dep;
 	}
 
+	
+	@Override
+	@Transactional
+	public List<Department> findAll() {
+		
+	
+			return departmentDAO.findAll();
+		
+	}
+
 	@Override
 	@Transactional
 	public void save(Department dep) {
@@ -65,5 +68,11 @@ public class DepartmentService implements EntityService<Department> {
 	public void deleteById(int theId) {
 		departmentDAO.deleteById(theId);
 	}
-
+	
+	
 }
+	
+
+
+
+

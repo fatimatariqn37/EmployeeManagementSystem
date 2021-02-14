@@ -28,7 +28,8 @@ public class Department {
 		
 	}
 	
-	public Department(String name, String description) {
+	public Department(int id,String name, String description) {
+		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
@@ -57,6 +58,11 @@ public class Department {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name=" + name + ", description=" + description + "]";
 	}
 
 

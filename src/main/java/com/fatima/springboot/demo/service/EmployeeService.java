@@ -23,7 +23,7 @@ public class EmployeeService implements EntityService<Employee> {
 	
 	@Autowired
 	public EmployeeService(@Qualifier("employeeDAO") EmployeeDAO theEmployeeDAO) {
-		employeeDAO = (EmployeeDAO) theEmployeeDAO;
+		employeeDAO = theEmployeeDAO;
 	}
 	
 	@Override

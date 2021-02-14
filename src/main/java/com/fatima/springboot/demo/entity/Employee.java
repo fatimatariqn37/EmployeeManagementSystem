@@ -83,10 +83,10 @@ public class Employee {
 
 
 
-	public Employee(String firstName, String lastName, String birthDate, List<EmployeeProject> employeeProjects,
+	public Employee(int id,String firstName, String lastName, String birthDate, List<EmployeeProject> employeeProjects,
 			Office office, Department department, EmployeeType employeeType, String cv, String salary,
 			Employee isSupervisor, String isActive, String availableLeaveDays, String availableSickDays) {
-		
+		this.id=id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.birthDate = birthDate;
@@ -100,6 +100,14 @@ public class Employee {
 		this.isActive = isActive;
 		this.availableLeaveDays = availableLeaveDays;
 		this.availableSickDays = availableSickDays;
+	}
+
+
+
+	public Employee(int id, String firstName, String lastName) {
+		this.id=id;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 

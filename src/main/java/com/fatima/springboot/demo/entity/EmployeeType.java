@@ -17,7 +17,8 @@ public class EmployeeType {
 	}
 	
 	
-	public EmployeeType(String name, String description) {
+	public EmployeeType(int id,String name, String description) {
+		this.id=id;
 		this.name = name;
 		this.description = description;
 	}

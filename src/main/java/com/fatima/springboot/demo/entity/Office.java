@@ -76,10 +76,12 @@ public class Office {
 	}
 
 
-	public Office(String name, String capacity, List<Employee> employees) {
+
+	public Office(int id,String name, String capacity) {
+		this.id=id;
 		this.name = name;
 		this.capacity = capacity;
-		this.employees = employees;
+	
 	}
 
 

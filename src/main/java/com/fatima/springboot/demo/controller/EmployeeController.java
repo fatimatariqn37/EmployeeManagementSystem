@@ -56,7 +56,7 @@ public class EmployeeController {
 	
 
 	
-	@PostMapping("/employees")
+	@PostMapping("/employee")
 	public Employee addEmployee(@RequestBody Employee theEmployee) {
 		
 
@@ -70,7 +70,7 @@ public class EmployeeController {
 	
 
 	
-	@PutMapping("/employees")
+	@PutMapping("/employee")
 	public Employee updateEmployee(@RequestBody Employee theEmployee) {
 		
 		employeeService.save(theEmployee);
